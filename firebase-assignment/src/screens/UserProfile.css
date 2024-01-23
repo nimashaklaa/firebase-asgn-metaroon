@@ -1,0 +1,14 @@
+.userProfile-container button {
+    margin: 10px;
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #3498db; /* Adjust as needed */
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.userProfile-container button:hover {
+    background-color: #2980b9; /* Adjust as needed */
+}
