@@ -94,7 +94,7 @@ const HomeScreen =()=>{
                     Sign up with Facebook
                 </button>
                 <button className="social-icon facebook" onClick={handleGithubLogin}>
-                    Sign up with Github!
+                    Sign up with Github
                 </button>
             </div>
         </div>
