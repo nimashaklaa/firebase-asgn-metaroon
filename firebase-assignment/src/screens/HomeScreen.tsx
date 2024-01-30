@@ -88,7 +88,7 @@ const HomeScreen =()=>{
             <hr className="separator"/>
             <div className="social-container">
                 <button className="social-icon google" onClick={handleGoogleLogin}>
-                    Sign up with Google
+                    Sign up with Google !
                 </button>
                 <button className="social-icon facebook" onClick={handleFacebookLogin}>
                     Sign up with Facebook
