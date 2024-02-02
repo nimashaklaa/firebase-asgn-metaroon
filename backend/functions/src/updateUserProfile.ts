@@ -1,11 +1,11 @@
 const functions = require('firebase-functions');
-const admin = require('firebase-admin');
+import admin = require('firebase-admin');
 
 admin.initializeApp();
 
 const db = admin.firestore();
 
-exports.updateUserProfile = functions.https.onCall(async (data, context) => {
+exports.updateUserProfile = functions.https.onCall(async (data:any, context:any) => {
     try {
         const userId = context.auth.uid;
         const { firstName, lastName, profilePicture } = data;

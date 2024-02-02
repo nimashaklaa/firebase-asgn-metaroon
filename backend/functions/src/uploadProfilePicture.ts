@@ -1,12 +1,12 @@
 const functions = require('firebase-functions');
-const admin = require('firebase-admin');
+import admin = require('firebase-admin');
 
 admin.initializeApp();
 
 const db = admin.firestore();
 const storage = admin.storage().bucket();
 
-exports.uploadProfilePicture = functions.https.onRequest(async (req, res) => {
+exports.uploadProfilePicture = functions.https.onRequest(async (req:any, res:any) => {
     try {
         const userId = req.query.userId; // Assume you pass userId as a query parameter
         const file = req.body; // The uploaded file, assuming it's passed in the request body
