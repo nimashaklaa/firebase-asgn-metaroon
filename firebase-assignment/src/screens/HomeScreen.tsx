@@ -3,6 +3,7 @@ import {createUserWithEmailAndPassword,signInWithPopup,GoogleAuthProvider,Facebo
 import './HomeScreen.css'
 import {auth} from "../config/firebase-config.ts";
 import {useNavigate} from "react-router-dom";
+import {useTestStore} from "../stores/TestStore.ts";
 
 
 const HomeScreen =()=>{
@@ -60,9 +61,18 @@ const HomeScreen =()=>{
             throw new Error(`User sign up failed with error ${error}`)
         }
     };
+    const testStore = useTestStore();
+    async function triggerCloudFunctions(){
+        try{
+            const response = await testStore.helloFireWorld();
+        }catch(error){
+            throw new Error(`Trigger cloud functions with an Error ${error}`)
+        }
+    }
     return (
         <div className="home-container">
             <h1>User Login</h1>
+            <h2></h2>
             <div className="userpass-container">
                 <div className="input-field">
                     <label htmlFor="email">Email:</label>
@@ -85,6 +95,7 @@ const HomeScreen =()=>{
                 <button onClick={handleSignup}>Sign Up</button>
 
             </div>
+            <button onClick={triggerCloudFunctions}>Trigger Cloud Functions</button>
             <hr className="separator"/>
             <div className="social-container">
                 <button className="social-icon google" onClick={handleGoogleLogin}>

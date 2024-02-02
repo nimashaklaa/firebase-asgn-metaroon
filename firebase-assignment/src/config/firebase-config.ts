@@ -12,6 +12,12 @@ export abstract class FirebaseConfig{
         messagingSenderId: "434731570688",
         appId: "1:434731570688:web:452de5291e1fc5724d6ae5"
     }
+    public static get getAllLocalFunctions():AllCloudFunctions{
+        return{
+            helloFireWorld:"http://127.0.0.1:5001/fir-example-dfa02/us-central1/helloFireWorld"
+
+        }
+    }
 
 }
 export const firebaseApp = initializeApp(FirebaseConfig.webFirebaseConfig)
@@ -24,3 +30,6 @@ export const storage = getStorage(firebaseApp)
 
 export const functions = getFunctions(firebaseApp)
 
+type AllCloudFunctions ={
+    helloFireWorld:string
+}
